@@ -4,8 +4,9 @@ FROM java:openjdk-8u72
 
 # Download the latest .deb and install
 WORKDIR /opt
-RUN curl https://github.com/riemann/riemann/releases/download/0.2.13/riemann-0.2.13.tar.bz2  > riemann.tar.bz2 \
-  && tar -xvjf riemann.tar.bz2
+RUN curl -L https://github.com/riemann/riemann/releases/download/0.2.13/riemann-0.2.13.tar.bz2  > riemann.tar.bz2 \
+&& tar -xvjf riemann.tar.bz2 \
+&& rm riemann.tar.bz2
 
 # Expose the ports for inbound events and websockets
 EXPOSE 5555
