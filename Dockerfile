@@ -2,7 +2,6 @@ FROM java:openjdk-8u72
 
 ENV VERSION 0.2.13
 
-# Download the latest .deb and install
 WORKDIR /opt
 RUN curl -L https://github.com/riemann/riemann/releases/download/${VERSION}/riemann-${VERSION}.tar.bz2  > riemann.tar.bz2 \
 && tar -xvjf riemann.tar.bz2 \
